@@ -6,7 +6,7 @@
 
 subx=$1
 
-AnalysisDir=/data/scratch/fmri_nov2019 #make sure this is correct
+AnalysisDir=/data/scratch/zakell/fmri_nov2019 #make sure this is correct
 
 subxDir=$AnalysisDir/Input/$subx
 
