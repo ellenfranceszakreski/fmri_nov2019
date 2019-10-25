@@ -6,7 +6,6 @@
 # no spaces should be in input
 # requires minc toolkit and minc-toolkit-extras to run
 
-
 ## check input
 # check input number
 if [ "$#" -ne 1 ]; then
