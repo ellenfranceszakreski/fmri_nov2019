@@ -14,7 +14,7 @@ done
 
 printf "Done making jobs.\nSee jobs at %s\n" $JobListFile
 
-echo "when ready call"
+printf "when ready call:\n\n"
 echo "module load qbatch"
-echo "qbatch -N \"efz_t1_prepro\" $AnalysisDir/cicjobs/t1_prepro/joblist"
+printf "qbatch -N \"efz_t1_prepro\" $AnalysisDir/cicjobs/t1_prepro/joblist\n\n"
 exit 0
