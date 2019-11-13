@@ -19,7 +19,7 @@ if [ `echo "$JobName" | grep -Eo [^0-9a-zA-Z_] | wc -l` -ne 0  ]; then
 	echo "error: Invalid JobName. JobName must contain only letters, numbers or underscores"
 	exit 2
 fi
-AnalysisDir=/data/scratch/zakell/fmri_oct2019
+AnalysisDir=/data/scratch/zakell/fmri_nov2019 #<-- make sure this is correct
 # recommended to check job list first
 cicjobDir=$AnalysisDir/cicjobs/$JobName
 if test -d $cicjobDir
