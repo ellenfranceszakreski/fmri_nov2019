@@ -12,8 +12,9 @@ matlabpool(cluster, number_of_cores);
 %% run analysis
 addpath(genpath(fullfile(spm('dir'),'config')));
 AnalysisDir='/data/scratch/zakell/fmri_nov2019';
+subxDir=fullfile(AnalysisDir,'Input',subx);
 jobs = {fullfile(AnalysisDir,'Scripts','prepro_job.m')};
-inputs{1,1} = {fullfile(AnalysisDir,'Input',subx)};
+inputs{1,1} = {subxDir};
 spm('defaults', 'FMRI');
 spm_jobman('run', jobs, inputs{:});
 % save file to indicate completion
