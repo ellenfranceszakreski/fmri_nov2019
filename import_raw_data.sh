@@ -57,6 +57,7 @@ do
 done
 unset subx
 if [ $DoEpi = false ]; then
+	echo "Done copying files."
 	exit 0
 fi
 ### special subjects
