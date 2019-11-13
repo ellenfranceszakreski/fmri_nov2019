@@ -1,6 +1,13 @@
 % append code after defining variable subx
 % e.g. subx='sub2'
 
+AnalysisDir='/data/scratch/zakell/fmri_nov2019';
+subxDir=fullfile(AnalysisDir,'Input',subx);
+if exist(fullfile(subxDir,'realign_done.mat'),'file')~=2
+  warning('efz:missing_step', 'realignment not done yet.');
+  exit
+end
+
 %% set up cluster
 number_of_cores=12;
 d=tempname();% get temporary directory location
@@ -11,8 +18,6 @@ matlabpool(cluster, number_of_cores);
 
 %% run analysis
 addpath(genpath(fullfile(spm('dir'),'config')));
-AnalysisDir='/data/scratch/zakell/fmri_nov2019';
-subxDir=fullfile(AnalysisDir,'Input',subx);
 jobs = {fullfile(AnalysisDir,'Scripts','slicetime_job.m')};
 inputs{1,1} = {subxDir};
 spm('defaults', 'FMRI');
