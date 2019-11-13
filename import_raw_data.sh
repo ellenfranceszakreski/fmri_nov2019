@@ -105,3 +105,4 @@ cp -v $niiSrcDir/$subx"_6.nii" $InputDir/$subx/$subx"_run3.nii"
 unset subx
 #### done
 echo "Done copying files"
+exit 0
