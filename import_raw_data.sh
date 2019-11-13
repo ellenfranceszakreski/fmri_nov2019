@@ -7,6 +7,7 @@ AnalysisDir=/data/scratch/zakell/fmri_nov2019 #<-- make sure this is correct!
 InputDir=$AnalysisDir/Input
 niiSrcDir=/data/chamal/projects/zakell/subx_nii #where nifti files are
 
+n3_nlmDir=/data/scratch/zakell/fmri_nov2019/n3_nlm
 
 # remove input dir if it is there
 test -d $InputDir && rm -r $InputDir
@@ -22,7 +23,7 @@ do
 	cp -v $niiSrcDir/$subx"_3.nii" $InputDir/$subx/$subx"_run1.nii"
 	cp -v $niiSrcDir/$subx"_4.nii" $InputDir/$subx/$subx"_run2.nii"
 	cp -v $niiSrcDir/$subx"_5.nii" $InputDir/$subx/$subx"_run3.nii"
-	cp -v $niiSrcDir/$subx"_6.nii" $InputDir/$subx/$subx"_anat.nii"
+	cp -v n3_nlmDir/"n3_nlm_"$subx"_anat.mnc.gz" $InputDir/$subx/$subx"_n3_nlm.mnc.gz"
 done
 unset subx
 ### special subjects
@@ -36,51 +37,39 @@ cp -v $niiSrcDir/$subx"_7.nii" $InputDir/$subx/$subx"_anat.nii"
 unset subx
 
 subx="sub5"
-rm $InputDir/$subx/*_run*.nii $InputDir/$subx/$subx"_anat.nii"
 cp -v $niiSrcDir/$subx"_3.nii" $InputDir/$subx/$subx"_run1.nii"
 cp -v $niiSrcDir/$subx"_6.nii" $InputDir/$subx/$subx"_run2.nii" # 4 and 5 were bad
 cp -v $niiSrcDir/$subx"_7.nii" $InputDir/$subx/$subx"_run3.nii"
-cp -v $niiSrcDir/$subx"_8.nii" $InputDir/$subx/$subx"_anat.nii"
 unset subx
 
 subx="sub6"
-rm $InputDir/$subx/*_run*.nii $InputDir/$subx/$subx"_anat.nii"
 cp -v $niiSrcDir/$subx"_4.nii" $InputDir/$subx/$subx"_run1.nii"
 cp -v $niiSrcDir/$subx"_5.nii" $InputDir/$subx/$subx"_run2.nii"
 cp -v $niiSrcDir/$subx"_6.nii" $InputDir/$subx/$subx"_run3.nii"
-cp -v $niiSrcDir/$subx"_7.nii" $InputDir/$subx/$subx"_anat.nii"
 unset subx
 
 subx="sub10"
-rm $InputDir/$subx/*_run*.nii $InputDir/$subx/$subx"_anat.nii"
 cp -v $niiSrcDir/$subx"_4.nii" $InputDir/$subx/$subx"_run1.nii"
 cp -v $niiSrcDir/$subx"_5.nii" $InputDir/$subx/$subx"_run2.nii"
 cp -v $niiSrcDir/$subx"_6.nii" $InputDir/$subx/$subx"_run3.nii"
-cp -v $niiSrcDir/$subx"_7.nii" $InputDir/$subx/$subx"_anat.nii"
 unset subx
 
 subx="sub21"
-rm $InputDir/$subx/*_run*.nii $InputDir/$subx/$subx"_anat.nii"
 cp -v $niiSrcDir/$subx"_4.nii" $InputDir/$subx/$subx"_run1.nii"
 cp -v $niiSrcDir/$subx"_5.nii" $InputDir/$subx/$subx"_run2.nii"
 cp -v $niiSrcDir/$subx"_6.nii" $InputDir/$subx/$subx"_run3.nii"
-cp -v $niiSrcDir/$subx"_7.nii" $InputDir/$subx/$subx"_anat.nii"
 unset subx
 
 subx="sub28"
-rm $InputDir/$subx/*_run*.nii $InputDir/$subx/$subx"_anat.nii"
 cp -v $niiSrcDir/$subx"_5.nii" $InputDir/$subx/$subx"_run1.nii" # 3 and 4 were bad
 cp -v $niiSrcDir/$subx"_6.nii" $InputDir/$subx/$subx"_run2.nii"
 cp -v $niiSrcDir/$subx"_7.nii" $InputDir/$subx/$subx"_run3.nii"
-cp -v $niiSrcDir/$subx"_8.nii" $InputDir/$subx/$subx"_anat.nii"
 unset subx
 
 subx="sub68"
-rm $InputDir/$subx/*_run*.nii $InputDir/$subx/$subx"_anat.nii"
 cp -v $niiSrcDir/$subx"_4.nii" $InputDir/$subx/$subx"_run1.nii"
 cp -v $niiSrcDir/$subx"_5.nii" $InputDir/$subx/$subx"_run2.nii"
 cp -v $niiSrcDir/$subx"_6.nii" $InputDir/$subx/$subx"_run3.nii"
-cp -v $niiSrcDir/$subx"_7.nii" $InputDir/$subx/$subx"_anat.nii"
 unset subx
 #### done
 echo "Done copying files"
