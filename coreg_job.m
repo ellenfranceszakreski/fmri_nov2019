@@ -33,4 +33,4 @@ matlabbatch{10}.spm.spatial.coreg.write.source(1) = cfg_dep('Coregister: Estimat
 matlabbatch{10}.spm.spatial.coreg.write.roptions.interp = 7;
 matlabbatch{10}.spm.spatial.coreg.write.roptions.wrap = [0 0 0];
 matlabbatch{10}.spm.spatial.coreg.write.roptions.mask = 0;
-matlabbatch{10}.spm.spatial.coreg.write.roptions.prefix = 'r';
+matlabbatch{10}.spm.spatial.coreg.write.roptions.prefix = 'c';
