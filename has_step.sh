@@ -21,7 +21,7 @@ do
 done
 if $InvalidStepName; then
 	ValidStepNames=`echo ${ValidStepNames[*]}`
-	printf "ERROR: Invalid step name \"%s\".\nValid step names are:\n\t%s\n" "$1" "$ValidStepNames"
+	printf "ERROR: Invalid step name \"%s\".\nValid step names are:\n\t%s\n" "$1" "$ValidStepNames" >&2
 	exit 1
 fi
 unset InvalidStepName ValidStepNames
