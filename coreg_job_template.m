@@ -17,6 +17,10 @@ jobs = {fullfile(AnalysisDir,'Scripts','coreg_job.m')};
 inputs{1,1} = {subxDir};
 spm('defaults', 'FMRI');
 spm_jobman('run', jobs, inputs{:});
+%% compress the output files
+unix(sprintf('pigz %s', fullfile(subxDir, 'cw_*.nii')));
+unix(sprintf('pigz %s', fullfile(subxDir, 'ce_*.nii')));
+
 % save file to indicate completion
 save(fullfile(subxDir,'coreg_done.mat'), 'jobs','-mat');
 % done
